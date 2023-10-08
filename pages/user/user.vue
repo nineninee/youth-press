@@ -6,7 +6,7 @@
 		</view>
 		<view class="content">
 			<view class="row" v-for="item in 10">
-				<newsbox></newsbox>
+				<newsbox @click.native="goDetail"></newsbox>
 			</view>
 		</view>
 	</view>
@@ -18,6 +18,13 @@
 			return {
 				
 			};
+		},
+		methods:{
+			goDetail(){
+				uni.navigateTo({
+					url:"/pages/detail/detail"
+				})
+			}
 		}
 	}
 </script>

@@ -7,7 +7,7 @@
 
 		<view class="content">
 			<div class="row" v-for="item in 10">
-				<newsbox></newsbox>
+				<newsbox @click.native="goDetail"></newsbox>
 			</div>
 		</view>
 	</view>
@@ -24,13 +24,18 @@
 
 		},
 		methods: {
-		clickNav(index){
-			this.navIndex = index
-		}
+			clickNav(index){
+				this.navIndex = index
+			},
+			goDetail(){
+				uni.navigateTo({
+					url:"/pages/detail/detail",
+				})
+			}
 		}
 	}
 </script>
-
+<strong></strong>
 <style lang="scss" scoped>
 	.navscroll {
 		height: 100rpx;
